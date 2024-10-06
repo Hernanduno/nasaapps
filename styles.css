@@ -160,14 +160,15 @@ nav {
 }
 
 .floating-box .chevron {
-    background: url('img/chevron-down.svg') no-repeat center;
+    background: url('img/chevron-up.svg') no-repeat center;
+    transform: rotate(180deg);
     width: 20px;
     height: 20px;
     transition: transform 0.3s ease;
 }
 
 .floating-box.expanded .chevron {
-    transform: rotate(180deg);
+    transform: rotate(0deg);
 }
 
 .dropdown-list {
