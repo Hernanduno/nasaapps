@@ -3,7 +3,8 @@
 body {
     margin: 0;
     /* font-family: 'Roboto', sans-serif;  */
-    font-family: Tahoma, 'Segoe UI', Geneva, Verdana, sans-serif
+    font-family: Tahoma, 'Segoe UI', Geneva, Verdana, sans-serif;
+    /* height: 100vh; */
 }
 
 canvas {
@@ -131,9 +132,9 @@ nav {
     bottom: 20px;
     left: 20px;
     width: 250px;
-    padding: 15px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 15px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8 );
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     transition: width 0.3s ease, height 0.3s ease;
@@ -154,9 +155,9 @@ nav {
 
 .floating-box p {
     margin: 0;
-    font-family: Arial, sans-serif;
-    color: #333;
-    font-size: 14px;
+    color: #000;
+    font-size: 16px;
+    
 }
 
 .floating-box .chevron {
@@ -190,7 +191,23 @@ nav {
 }
 
 .dropdown-list li span {
-    font-family: Arial, sans-serif;
     font-size: 14px;
+    color: #333;
+    padding-top: 15px;
 }
 
+.footer {
+    position: absolute;
+    bottom: 0; /* Alinea el footer en la parte inferior de la pantalla */
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    background-color: transparent; /* Puedes cambiar el color de fondo si lo necesitas */
+    display: flex;
+    justify-content: flex-end; /* Alinea el contenido a la derecha */
+    padding: 10px; /* Añade un poco de espacio alrededor de la imagen */
+}
+
+.footer-image {
+    height: 45px; 
+    margin-right: 25px;
+    margin-bottom: 10px;
+}
