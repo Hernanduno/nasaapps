@@ -106,12 +106,64 @@ const mouse = new THREE.Vector2();
 
 // Array de coordenadas con la propiedad "info"
 const coordinates = [
-    { lat: -12.0464, lon: -77.0428, info: "hola mundo 0" }, // Lima (Capital de Perú)
-    { lat: 34.0522, lon: -118.2437, info: "hola mundo 1" }, // Los Ángeles
-    { lat: -33.8688, lon: 151.2093, info: "hola mundo 2" }, // Sídney
-    { lat: 51.5074, lon: -0.1278, info: "hola mundo 3" },   // Londres
-    { lat: 35.6895, lon: 139.6917, info: "hola mundo 4" }   // Tokio
+        { 
+          lat: 14.59549568288755, 
+          lon: 120.92072168102077, 
+          info: { 
+            titulo: "Philippines: Responsible for Over a Third of Ocean Plastic Waste", 
+            contenido: "According to an analysis by Our World in Data based on a study by Science Advances, the Philippines is responsible for over a third of the plastic waste that ends up in the oceans, making it one of the largest contributors to marine pollution.", 
+            origen: "https://s2-g1.glbimg.com/ukklpyZmpMHXYrGu2fgyG8A1xNg=/0x0:6016x4001/1008x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2019/o/H/tP1znSQKi8Bk5E4lqORg/2018-09-22t041229z-157899311-rc1d8e2cc750-rtrmadp-3-world-cleanup-philippines.jpg"
+          } 
+        }, 
+        { 
+          lat: -15.23879752771152, 
+          lon: 154.21777190171278, 
+          info: { 
+            titulo: "Great Barrier Reef Shows Signs of Recovery with Increased Coral Cover in 2024", 
+            contenido: "The Australian Institute of Marine Science (AIMS) reported that the Great Barrier Reef has shown significant recovery, with an increase in hard coral cover across its major regions. In the northern region, cover grew up to 39.5%, with similar improvements in the central and southern zones.", 
+            origen: "https://media.traveler.es/photos/63ecf8d844c1a0e03615a59e/16:9/w_1920,c_limit/2H0WB0B%20(1).jpg"
+          } 
+        }, 
+        { 
+          lat: 32.288635439804246, 
+          lon: -138.8410917272819, 
+          info: { 
+            titulo: "The Plastic Continent Floating in the Pacific Ocean", 
+            contenido: "The Great Pacific Garbage Patch is a 1.6 million square kilometer garbage continent weighing around 80,000 tons of plastic that continues to grow, according to a 2018 scientific study published by Nature. To understand its size, it is now three times the size of France.", 
+            origen: "https://static.wixstatic.com/media/caa8fe_2b9c51269b6c4e46ad6943844494633d~mv2.jpg/v1/fill/w_989,h_600,al_c,q_85,enc_auto/caa8fe_2b9c51269b6c4e46ad6943844494633d~mv2.jpg"
+          } 
+        }, 
+        { 
+          lat: 23.617134339221813, 
+          lon: -111.4137939246337, 
+          info: { 
+            titulo: "Mexico Supports Moratorium on Seabed Mining in Areas Beyond National Jurisdiction", 
+            contenido: "In 2023, Mexico joined the moratorium aimed at halting deep-sea mining outside national jurisdiction. This support seeks to protect marine ecosystems until there is enough scientific evidence to ensure marine conservation, and aims to regulate any future exploitation strictly to avoid irreparable damage.", 
+            origen: "https://www.induambiente.com/contenidos/7873_Submarina_y_Controversial-01_2000.jpg"
+          } 
+        }, 
+        { 
+          lat: 64.96352276915466, 
+          lon: -60.415455875186794, 
+          info: { 
+            titulo: "The Ocean is Warming", 
+            contenido: "The ocean has absorbed much of this heat increase, with the top 100 meters (about 328 feet) of the ocean showing a temperature rise of over 0.6 degrees Fahrenheit (0.33 degrees Celsius) since 1969. The Earth stores 90% of the extra energy in the ocean.", 
+            origen: "https://www.gob.mx/cms/uploads/article/main_image/67704/15965309_872513286224499_1905059739080221491_n.jpg"
+          } 
+        }
+      
 ];
+
+// Función para cerrar el modal cuando se hace clic fuera de él
+window.addEventListener('click', function(event) {
+    const modal = document.getElementById('info-modal');
+    const isClickInside = modal.contains(event.target);
+
+    // Si el clic es fuera del modal y el modal está visible, ciérralo
+    if (!isClickInside && modal.style.display === 'block') {
+        modal.style.display = 'none';
+    }
+});
 
 // Función para convertir coordenadas geográficas a coordenadas 3D
 function convertLatLonToVector3(lat, lon, radius) {
@@ -213,7 +265,11 @@ function onMouseClick(event) {
         // Mostrar la información del pin en el modal
         const modal = document.getElementById('info-modal');
         const modalContent = document.getElementById('modal-content');
-        modalContent.textContent = info;
+        const modalHeader = document.getElementById('modal-header');
+        const modalImage = document.getElementById('modal-image');
+        modalHeader.textContent = info.titulo;
+        modalContent.textContent = info.contenido;
+        modalImage.src = info.origen;
         modal.style.display = 'block';
     }
 }
@@ -222,10 +278,10 @@ function onMouseClick(event) {
 window.addEventListener('click', onMouseClick);
 
 // Cerrar el modal
-const closeModalButton = document.getElementById('close-modal');
-closeModalButton.addEventListener('click', () => {
-    document.getElementById('info-modal').style.display = 'none';
-});
+// const closeModalButton = document.getElementById('close-modal');
+// closeModalButton.addEventListener('click', () => {
+//     document.getElementById('info-modal').style.display = 'none';
+// });
 
 // Función para alternar entre el shader de temperatura y el material turquesa
 const temperatureSwitch = document.getElementById('temperature-switch');

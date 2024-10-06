@@ -15,24 +15,24 @@
             <div class="dropdown">
                 <button class="dropbtn">SDG14</button>
                 <div class="dropdown-content">
-                    <a href="https://site1.com">Recurso 1</a>
-                    <a href="https://site2.com">Recurso 2</a>
-                    <a href="https://site3.com">Recurso 3</a>
+                    <a href="https://www.canada.ca/en/environment-climate-change/services/climate-change/science-research-data.html">Life Below Water</a>
+                    <a href="https://www.asc-csa.gc.ca/eng/satellites/swot/">Goals</a>
+                    <a href="https://www.eodms-sgdot.nrcan-rncan.gc.ca/index-en.html">Progress</a>
                 </div>
             </div>
             <div class="dropdown">
-                <button class="dropbtn">RECURSOS</button>
+                <button class="dropbtn">RESOURCES</button>
                 <div class="dropdown-content">
-                    <a href="https://sdg1.com">Objetivo 1</a>
-                    <a href="https://sdg2.com">Objetivo 2</a>
-                    <a href="https://sdg3.com">Objetivo 3</a>
+                    <a href="https://www.canada.ca/en/environment-climate-change/services/climate-change/science-research-data.html">ECCC: Life Below Water</a>
+                    <a href="https://www.asc-csa.gc.ca/eng/satellites/swot/">Surface Water by SWOT</a>
+                    <a href="https://www.eodms-sgdot.nrcan-rncan.gc.ca/index-en.html">EODMS: Ice monitoring</a>
                 </div>
             </div>
         </nav>
     </header>
 <body>
-    <div id="controls-container">
-        <button id="toggle-rotation">Controla rotación</button>
+    <div id="controls-container"  style="opacity: 0;">
+        <button id="toggle-rotation" style="height: 200px;">Controla rotación</button>
         <input id="sphere-radius" type="range" min="1.005" max="1.08" step="0.001" value="1.005">
         <label for="temperature-switch" style="color: white;">Activar temperatura</label>
         <input type="checkbox" id="temperature-switch">
@@ -41,7 +41,9 @@
     </div>
 
     <div id="info-modal">
-        <span id="close-modal">X</span>
+        <!-- <span id="close-modal">X</span> -->
+        <img id="modal-image">
+        <h2 id="modal-header"></h2>
         <p id="modal-content"></p>
     </div>
 

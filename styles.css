@@ -24,22 +24,62 @@ button, input {
     margin-right: 10px;
 }
 
+/* Contenedor padre */
 #info-modal {
-    display: none;
+    display: flex;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8 );
+    font-family: 'Tahoma', 'Segoue UI', Geneva, Verdana, sans-serif;
+    border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 200;
+    /* align-items: center; */
+    justify-content: center;
+    max-width: 250px;
+    /* align-content: center;
+    border-color: black;
+    border-width: 2px; */
+    /* border-style: solid; */
 }
 
 #close-modal {
     cursor: pointer;
     color: red;
     font-size: 14px;
+    /* border-color: black;
+    border-width: 2px;
+    border-style: solid; */
+    /* align-self: center; */
+}
+
+/* textos */
+#modal-content{
+    border-width: 2px;
+    /* border-color: black;
+    border-style: solid;
+    text-align: justify; */
+}
+
+#modal-header {
+    border-width: 2px;
+    font-size: medium;
+    /* border-color: black;
+    border-style: solid;
+    text-align: center; */
+}
+
+/* imagen */
+#modal-image{
+    width: 100%;
+    height: 150pxpx;
+    border-width: 2px;
+    /* border-color: red;
+    border-style: solid;
+    align-self: center; */
 }
 
 header {
@@ -192,5 +232,61 @@ nav {
 .dropdown-list li span {
     font-family: Arial, sans-serif;
     font-size: 14px;
+}
+
+.floating-box {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 250px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8 );
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: width 0.3s ease, height 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.floating-box.expanded {
+    width: 300px;
+    height: 200px;
+}
+
+.floating-box .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.floating-box p {
+    margin: 0;
+    color: #000;
+    font-size: 16px;
+    
+}
+
+.floating-box .chevron {
+    background: url('img/chevron-up.svg') no-repeat center;
+    transform: rotate(180deg);
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.floating-box.expanded .chevron {
+    transform: rotate(0deg);
+}
+
+.dropdown-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    display: none;
+}
+
+.floating-box.expanded .dropdown-list {
+    display: block;
 }
 
